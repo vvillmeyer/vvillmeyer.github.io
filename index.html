@@ -8,35 +8,18 @@
 <title>Western Courses</title>
 </head>
 <body>
-<?php
-include 'connectdb.php';
-?>
 <style>
 h1{text-align:center;}
 h2{text-align:center;}
 </style>
 <h1>Shopify Inventory Tracker</h1>
 <h2>Will Meyer</h2>
-<?php
-include 'getdata.php';
-?>
 <style>
 p {text-align:center;}
 </style>
-<p><strong> Task #2: - Modify UWO Course</strong><p>
-<p><strong> To change the name, weight or suffix of a course please fill out the list below: </stong></p>
+<p><strong>Inventory Items</strong><p>
 
 <form action="task2.php" method="post">
-Enter the course number of the course you would like to modify: <input type="text" name="westernnum"><br><br>
-Enter new name (or leave blank): <input type="text" name="westernname" value="<?php $westernname ?>"><br><br>
-Enter new suffix (or leave blank): <input type="text" name="suffix" value="<?php $suffix ?>"><br><br>
-<label for="weight">Choose new weight:</label>
-<select name="weight" id="weight" value="<?php $weight ?>">
-<option value="NULL">Select one of the options</option>
-<option value="0.5">0.5</option>
-<option value="1.0">1.0</option>
-</select>
-<br><br>
 <input type="submit" name ="submit" value="Modify Course">
 </form>
 
