@@ -10,16 +10,27 @@
                 x.add(option);
             }
         </script>
-        <script src="jquery-1.7.1.js" type="text/javascript"></script> 
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="text/javascript">
-            $(document).ready(  
-            function() {  
-                $('#move').click(  
-                    function(e) {  
-                        $('#access > option:selected').appendTo('#work');  
-                        e.preventDefault();  
-                    });
-        </script>
+        $(function () {
+            //Attach click event of button
+            $("#move").click(function (e) {
+                //Pass the value from Listbox1 to Listbox2
+                $("#access > option:selected").each(function () {
+                    $(this).remove().appendTo("#work");
+                });
+                e.preventDefault();
+            });
+            //Attach click event of button
+            $("#back").click(function (e) {
+                //Pass the value from Listbox2 to Listbox1
+                $("#work > option:selected").each(function () {
+                    $(this).remove().appendTo("#move");
+                });
+                e.preventDefault();
+            });
+        });
+    </script>
     </head>
     <body style="text-align: center;">
         <h1>Add user entered item into ListBox.</h1>
@@ -28,6 +39,7 @@
             <p><input type="text" id="txtItem" /></p>
             <p><input type="button" onclick="insertItemIntoListBox()" value="Insert" /></p>
             <p><input type="button" id="move" value="Move" /></p>
+            <p><input type="button" id="back" value="Back" /></p>
             <select id="access" size="10" style="width: 300px;">
             </select>
             <select id="work" size="10" style="width: 300px;">
