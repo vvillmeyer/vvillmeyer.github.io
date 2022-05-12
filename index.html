@@ -11,13 +11,13 @@
             }
         </script>
         <script type="text/javascript">
-            function moveItemIntoListBox() {
-                var x = document.getElementById("work");
-                var item = document.getElementById("txtItem").value;
-                var option = document.createElement("option");
-                option.text = item;
-                x.add(option);
-            }
+            $(document).ready(  
+            function() {  
+                $('#Move').click(  
+                    function(e) {  
+                        $('#access > option:selected').appendTo('#work');  
+                        e.preventDefault();  
+                    });
         </script>
     </head>
     <body style="text-align: center;">
