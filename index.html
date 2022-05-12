@@ -10,6 +10,15 @@
                 x.add(option);
             }
         </script>
+        <script type="text/javascript">
+            function moveItemIntoListBox() {
+                var x = document.getElementById("access");
+                var item = document.getElementById("txtItem").value;
+                var option = document.createElement("option");
+                option.text = item;
+                x.add(option);
+            }
+        </script>
     </head>
     <body style="text-align: center;">
         <h1>Add user entered item into ListBox.</h1>
@@ -17,6 +26,7 @@
             <p><big>Enter your favourite accessory: </big></p>
             <p><input type="text" id="txtItem" /></p>
             <p><input type="button" onclick="insertItemIntoListBox()" value="Insert" /></p>
+            <p><input type="button" onclick="moveItemIntoListBox()" value="Move" /></p>
             <select id="access" size="10" style="width: 300px;">
                 <option>Mobile</option>
                 <option>Tablet</option>
