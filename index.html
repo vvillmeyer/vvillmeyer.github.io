@@ -12,7 +12,7 @@
         </script>
         <script type="text/javascript">
             $(document).ready(  
-            function() {  
+            function(moveItem) {  
                 $('#move').click(  
                     function(e) {  
                         $('#access > option:selected').appendTo('#work');  
@@ -26,7 +26,7 @@
             <p><big>Enter your favourite accessory: </big></p>
             <p><input type="text" id="txtItem" /></p>
             <p><input type="button" onclick="insertItemIntoListBox()" value="Insert" /></p>
-            <p><input type="button" id="move" value="Move" /></p>
+            <p><input type="button" id="move" onclick="moveItem()" value="Move" /></p>
             <select id="access" size="10" style="width: 300px;">
                 <option>Mobile</option>
                 <option>Tablet</option>
