@@ -50,6 +50,13 @@
                 });
                 e.preventDefault();
             });
+            $("#edit").click(function (e) {
+                //Pass the value from Listbox2 to Listbox1
+                $("#access > option:selected").each(function () {
+                    $(this).remove();
+                });
+                e.preventDefault();
+            });
         });
     </script>
     </head>
@@ -69,6 +76,6 @@
     <body style="text-align: left;">
             <p><input type="button" id="move" value="Move" /></p>
             <p><input type="button" id="back" value="Back" /></p>
-            <button onclick="editFunction()">Edit</button>
+            <p><input type="button" nclick="editFunction()" id="edit" value="Edit" /></p>
     </body>
 </html>
