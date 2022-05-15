@@ -2,7 +2,7 @@
     <head>
         <title>Add user entered item. TEST</title>
         <script type="text/javascript">
-            function insertItemIntoListBox() {
+            function insertItemIntoListBox(item) {
                 var x = document.getElementById("access");
                 var item = document.getElementById("txtItem").value;
                 var option = document.createElement("option");
@@ -10,7 +10,6 @@
                 x.add(option);
             }
         </script>
-    
 
         <p id="change"></p>
 
@@ -18,7 +17,7 @@
             function editFunction() {
                 let item = prompt("Please enter your new inventory:", "Example");
                 if (item != null) {
-                    insertItemIntoListBox();
+                    insertItemIntoListBox(item);
                 }
             }
         </script>
