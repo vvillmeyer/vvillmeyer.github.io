@@ -17,11 +17,7 @@
             function editFunction() {
                 let item = prompt("Please enter your new inventory:", "Example");
                 if (item != null) {
-                    var x = document.getElementById("access");
-                    var item = document.getElementById("change").value;
-                    var option = document.createElement("option");
-                    option.text = item;
-                    x.add(option);
+                    x.add(item);
                 }
             }
         </script>
@@ -45,13 +41,6 @@
                 e.preventDefault();
             });
             $("#remove").click(function (e) {
-                //Pass the value from Listbox2 to Listbox1
-                $("#access > option:selected").each(function () {
-                    $(this).remove();
-                });
-                e.preventDefault();
-            });
-            $("#edit").click(function (e) {
                 //Pass the value from Listbox2 to Listbox1
                 $("#access > option:selected").each(function () {
                     $(this).remove();
