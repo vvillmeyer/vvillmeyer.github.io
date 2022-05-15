@@ -17,7 +17,11 @@
             function editFunction() {
                 let item = prompt("Please enter your new inventory:", "Example");
                 if (item != null) {
-                    insertItemIntoListBox(item);
+                    var x = document.getElementById("access");
+                    var item = document.getElementById("txtItem").value;
+                    var option = document.createElement("option");
+                    option.text = item;
+                    x.add(option);
                 }
             }
         </script>
@@ -73,6 +77,6 @@
     <body style="text-align: left;">
             <p><input type="button" id="move" value="Move" /></p>
             <p><input type="button" id="back" value="Back" /></p>
-            <button onclick="editFunction()">Edit</button>
+            <p><input type="button" id="edit" value="Edit" onclick="editFunction()" /></p>
     </body>
 </html>
