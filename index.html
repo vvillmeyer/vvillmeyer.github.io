@@ -18,7 +18,9 @@
                 let item = prompt("Please enter your new inventory:", "Example");
                 if (item != null) {
                     var y = document.getElementById("access");
-                    y.add(item);
+                    var option = document.createElement("option");
+                    option.text = item;
+                    y.add(option);
                 }
             }
         </script>
