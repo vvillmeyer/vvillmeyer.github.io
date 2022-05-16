@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Add user entered item. TEST</title>
+        <title>Inventory Tracker</title>
         <script type="text/javascript">
             function insertItemIntoListBox() {
                 var x = document.getElementById("access");
@@ -10,12 +10,10 @@
                 x.add(option);
             }
         </script>
-
         <p id="change"></p>
-
         <script>
             function editFunction() {
-                let item = prompt("Please enter your new inventory:", "Example");
+                let item = prompt("Please enter your new inventory item:", "Example");
                 if (item != null) {
                     var y = document.getElementById("access");
                     var option = document.createElement("option");
@@ -27,7 +25,6 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="text/javascript">
         $(function () {
-            //Attach click event of button
             $("#move").click(function (e) {
                 //Pass the value from Listbox1 to Listbox2
                 $("#access > option:selected").each(function () {
@@ -35,9 +32,7 @@
                 });
                 e.preventDefault();
             });
-            //Attach click event of button
             $("#back").click(function (e) {
-                //Pass the value from Listbox2 to Listbox1
                 $("#work > option:selected").each(function () {
                     $(this).remove().appendTo("#access");
                 });
@@ -60,10 +55,10 @@
         });
     </script>
     </head>
-    <body style="text-align: center;">
-        <h1>Add user entered item into ListBox.</h1>
+    <body style="text-align: left">
+        <h1>Inventory Tracker</h1>
         <form>
-            <p><big>Enter your favourite accessory: </big></p>
+            <p><big>Enter an inventory item to add to the main inventory: </big></p>
             <p><input type="text" id="txtItem" /></p>
             <p><input type="button" onclick="insertItemIntoListBox()" value="Insert" /></p>
             <p><input type="button" id="remove" value="Remove" /></p>
