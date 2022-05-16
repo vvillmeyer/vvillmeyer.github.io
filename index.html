@@ -2,8 +2,9 @@
     <head>
         <title>Inventory Tracker</title>
         <script type="text/javascript">
+            //Insert item to main inventory
             function insertItemIntoListBox() {
-                var x = document.getElementById("access");
+                var x = document.getElementById("main");
                 var item = document.getElementById("txtItem").value;
                 var option = document.createElement("option");
                 option.text = item;
@@ -12,10 +13,12 @@
         </script>
         <p id="change"></p>
         <script>
+            //Pop-up function for edit button
             function editFunction() {
                 let item = prompt("Please enter your new inventory item:", "Example");
                 if (item != null) {
-                    var y = document.getElementById("access");
+                    //Add item to main inventory
+                    var y = document.getElementById("main");
                     var option = document.createElement("option");
                     option.text = item;
                     y.add(option);
@@ -25,29 +28,30 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="text/javascript">
         $(function () {
+            //Move item from main inventory to shipment when selected and move pressed
             $("#move").click(function (e) {
-                //Pass the value from Listbox1 to Listbox2
-                $("#access > option:selected").each(function () {
-                    $(this).remove().appendTo("#work");
+                $("#main > option:selected").each(function () {
+                    $(this).remove().appendTo("#shipment");
                 });
                 e.preventDefault();
             });
+            //Move item back to main inventory from shipment
             $("#back").click(function (e) {
-                $("#work > option:selected").each(function () {
-                    $(this).remove().appendTo("#access");
+                $("#shipment > option:selected").each(function () {
+                    $(this).remove().appendTo("#main");
                 });
                 e.preventDefault();
             });
+            //Remove item from main inventory
             $("#remove").click(function (e) {
-                //Pass the value from Listbox2 to Listbox1
-                $("#access > option:selected").each(function () {
+                $("#main > option:selected").each(function () {
                     $(this).remove();
                 });
                 e.preventDefault();
             });
+            //Remove item from main inventory when edit button clicked
             $("#edit").click(function (e) {
-                //Pass the value from Listbox2 to Listbox1
-                $("#access > option:selected").each(function () {
+                $("#main > option:selected").each(function () {
                     $(this).remove();
                 });
                 e.preventDefault();
@@ -60,14 +64,14 @@
         <form>
             <p><big>Enter an inventory item to add to the main inventory: </big><input type="text" id="txtItem" />  <input type="button" onclick="insertItemIntoListBox()" value="Insert" /></p>
             <p>Main inventory: </p>
-            <select id="access" size="10" style="width: 300px;" style="height: 150px;">
+            <select id="main" size="10" style="width: 300px;" style="height: 150px;">
             </select>
             <p>(Select item on list to use operation buttons below)</p>
             <p><input type="button" onclick="editFunction()" id="edit" value="Edit" />  <input type="button" id="remove" value="Remove" /></p>
             <p><input type="button" id="move" value="Move to shipment inventory" /></p>
             <p><input type="button" id="back" value="Move back to main inventory" /></p>
             <p>Shipment inventory: </p>
-            <select id="work" size="10" style="width: 300px;" style="height: 150px;">
+            <select id="shipment" size="10" style="width: 300px;" style="height: 150px;">
             </select>
         </form>
 </html>
