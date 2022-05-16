@@ -58,17 +58,17 @@
     <body style="text-align: left">
         <h1>Inventory Tracker</h1>
         <form>
-            <p><big>Enter an inventory item to add to the main inventory: </big> <input type="text" id="txtItem" /></p>
-            <p><input type="button" onclick="insertItemIntoListBox()" value="Insert" /><input type="button" id="remove" value="Remove" /></p>
+            <p><big>Enter an inventory item to add to the main inventory: </big><input type="text" id="txtItem" /><input type="button" onclick="insertItemIntoListBox()" value="Insert" /></p>
+            <p><input type="button" id="remove" value="Remove" /></p>
             <select id="access" size="10" style="width: 300px;" style="height: 150px;">
             </select>
+            <p><input type="button" id="move" value="Move" /></p>
+            <p><input type="button" id="back" value="Back" /></p>
             <select id="work" size="10" style="width: 300px;" style="height: 150px;">
             </select>
         </form>
     </body>
     <body style="text-align: left;">
-            <p><input type="button" id="move" value="Move" /></p>
-            <p><input type="button" id="back" value="Back" /></p>
-            <p><input type="button" onclick="editFunction()" id="edit" value="Edit" /></p>
+            <p><input type="button" onclick="editFunction()" id="edit" value="Edit" /><input type="button" id="remove" value="Remove" /></p>
     </body>
 </html>
